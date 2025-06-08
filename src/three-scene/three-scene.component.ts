@@ -1,6 +1,6 @@
 import {
-  AfterViewInit,
-  Component,
+  AfterViewInit, ChangeDetectionStrategy,
+  Component, computed,
   effect,
   ElementRef,
   HostListener,
@@ -16,7 +16,8 @@ import {GeometryPrimitive} from '../shared/models/three-geometry/primitive.model
   imports: [],
   standalone: true,
   templateUrl: './three-scene.component.html',
-  styleUrl: './three-scene.component.scss'
+  styleUrl: './three-scene.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ThreeSceneComponent implements AfterViewInit, OnDestroy {
 

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {ListComponent} from '../list/list.component';
 import {ThreeSceneComponent} from '../three-scene/three-scene.component';
 import {GeometryPrimitivesService} from '../services/geometry-primitives.service';
@@ -14,7 +14,8 @@ import {PrimitiveFormValue} from '../shared/models/three-geometry/primitive.mode
   ],
   standalone: true,
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class App {
 

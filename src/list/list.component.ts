@@ -1,4 +1,4 @@
-import {Component, input, output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, input, output} from '@angular/core';
 import {MatList, MatListItem} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
@@ -18,7 +18,8 @@ import {NgStyle} from '@angular/common';
   ],
   standalone: true,
   templateUrl: './list.component.html',
-  styleUrl: './list.component.scss'
+  styleUrl: './list.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListComponent {
 

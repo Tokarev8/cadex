@@ -3,7 +3,7 @@ import {MeshPosition} from '../models/three-geometry/primitive.model';
 
 @Pipe({
   name: 'positionToString',
-  pure: true, // default (оптимизация производительности)
+  pure: true,
   standalone: true
 })
 export class PositionToString implements PipeTransform {
