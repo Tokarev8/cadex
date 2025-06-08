@@ -1,0 +1,29 @@
+
+<div class="list">
+  <div class="list__content">
+    <mat-list>
+      @for (item of geometryPrimitivesArray(); track item.element.id) {
+        <mat-list-item
+          [class.selected]="item.selected"
+          (click)="selectPrimitives.emit($index)">
+          <div class="list__item"  >
+            <div class="list__item__text-block">
+              <div>{{"item.title"}}</div>
+              <div>Position:{{item.element.position | positionToString}}</div>
+            </div>
+            <div class="list__item__color-box" [ngStyle]="{'background-color': item.color.getStyle()}"></div>
+          </div>
+        </mat-list-item>
+      }
+    </mat-list>
+  </div>
+  <div class="list__footer">
+    <div class="list__footer__buttons">
+      <button mat-raised-button (click)="clearPrimitives.emit()">Clear</button>
+      <button mat-raised-button (click)="addGroup.emit()">Add Group</button>
+    </div>
+  </div>
+</div>
+
+
+

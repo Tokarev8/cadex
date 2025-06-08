@@ -1,0 +1,32 @@
+
+.popup {
+  padding: 20px 10px;
+  width: 300px;
+  height: 480px;
+  border: 1px solid black;
+  background-color: white;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+
+/*  mat-radio-group{
+    margin-top: 30px;
+  }*/
+
+  mat-form-field {
+    margin-top: 20px;
+  }
+
+  mat-dialog-actions{
+    //margin-top: 20px;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}

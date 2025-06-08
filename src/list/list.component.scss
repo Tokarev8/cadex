@@ -1,0 +1,53 @@
+
+.list {
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  &__item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    &__color-box{
+      width: 10px;
+      height: 10px;
+      border: 1px solid black;
+    }
+  }
+
+  &__footer {
+    margin-top: auto;
+    height: 50px;
+    padding-top: 20px;
+    &__buttons {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+
+  &__content{
+    height: 100%;
+    flex: 1;
+  }
+}
+
+mat-list {
+  flex: 1;
+  overflow-y: auto;
+  --mat-list-list-item-one-line-container-height: 70px
+}
+
+mat-list-item{
+  border-bottom: 1px solid black;
+}
+
+.selected{
+  background-color: #AFEEEE;
+}
+
+
+
+
