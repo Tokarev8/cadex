@@ -42,31 +42,24 @@ export class GeometryPrimitivesService {
   }
 
   public createPyramid(width: number, height: number, depth: number): THREE.BufferGeometry {
-    // Вершины основания
     const v0 = new THREE.Vector3(-width/2, 0, -depth/2);
     const v1 = new THREE.Vector3(width/2, 0, -depth/2);
     const v2 = new THREE.Vector3(width/2, 0, depth/2);
     const v3 = new THREE.Vector3(-width/2, 0, depth/2);
 
-    // Вершина (остров)
     const apex = new THREE.Vector3(0, height, 0);
 
-    // Массив вершин
     const vertices: THREE.Vector3[] = [v0, v1, v2, v3, apex];
 
-    // Индексы граней (треугольников)
     const indices: number[] = [
-      // основание (две треугольника)
       0,1,2,
       0,2,3,
-      // боковые грани
       0,1,4,
       1,2,4,
       2,3,4,
       3,0,4
     ];
 
-    // Создаем массив позиций для BufferGeometry
     const positions: number[] = [];
     vertices.forEach(v => {
       positions.push(v.x,v.y,v.z);
@@ -110,7 +103,7 @@ export class GeometryPrimitivesService {
   }
 
   private generateUniquePosition(): MeshPosition {
-    const minDistance = 2; // минимальное расстояние между фигурами
+    const minDistance = 2;
     let position: MeshPosition;
     let attempts = 0;
     const maxAttempts = 100;
